@@ -293,3 +293,37 @@ button { cursor: pointer; }
 @media (max-width: 620px) {
   .ad-zone { margin: 20px auto; }
 }
+
+
+/* Publicités Adsterra */
+.ad-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ad-mobile {
+  display: none;
+}
+
+.ad-desktop {
+  display: block;
+}
+
+.ad-zone-square {
+  min-height: 250px;
+}
+
+@media (max-width: 767px) {
+  .ad-desktop {
+    display: none;
+  }
+
+  .ad-mobile {
+    display: block;
+  }
+}
