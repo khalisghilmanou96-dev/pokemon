@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mini Pokédex utilisant PokéAPI, prêt pour GitHub Pages." />
+  <title>Mini Pokédex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Projet GitHub Pages + PokéAPI</p>
+        <h1>Mini Pokédex</h1>
+        <p class="subtitle">Recherche un Pokémon, découvre ses types, ses statistiques et sa fiche détaillée.</p>
+      </div>
+      <div class="hero-badge" aria-hidden="true">⚡</div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Recherche Pokémon">
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="Ex. pikachu, 25, charizard…" autocomplete="off" />
+          <button id="searchButton" type="button">Rechercher</button>
+        </div>
+        <button id="randomButton" class="secondary-button" type="button">🎲 Pokémon au hasard</button>
+      </section>
+
+      <p id="status" class="status" aria-live="polite"></p>
+
+      <section class="ad-zone ad-zone-top" aria-label="Publicité">
+        <div id="responsiveAd"></div>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Sélection</p>
+            <h2>Pokémon populaires</h2>
+          </div>
+          <button id="loadMoreButton" class="ghost-button" type="button">Afficher plus</button>
+        </div>
+        <div id="pokemonGrid" class="pokemon-grid"></div>
+      </section>
+      <section class="ad-zone ad-zone-square" aria-label="Publicité">
+        <div id="squareAd"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <dialog id="pokemonDialog" class="pokemon-dialog">
+    <button id="closeDialogButton" class="close-button" type="button" aria-label="Fermer">×</button>
+    <div id="pokemonDetails"></div>
+  </dialog>
+
+  <template id="pokemonCardTemplate">
+    <article class="pokemon-card">
+      <div class="card-topline">
+        <span class="pokemon-number"></span>
+        <span class="card-arrow">↗</span>
+      </div>
+      <img class="pokemon-image" src="" alt="" loading="lazy" />
+      <div class="card-content">
+        <h3 class="pokemon-name"></h3>
+        <div class="pokemon-types"></div>
+      </div>
+    </article>
+  </template>
+
+
+  <script>
+    function loadAd(containerId, key, width, height) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const frame = document.createElement('iframe');
+      frame.width = width;
+      frame.height = height;
+      frame.setAttribute('scrolling', 'no');
+      frame.setAttribute('frameborder', '0');
+      frame.style.border = '0';
+      frame.style.overflow = 'hidden';
+      container.appendChild(frame);
+      const doc = frame.contentWindow.document;
+      doc.open();
+      doc.write(`<script>atOptions={key:'${key}',format:'iframe',height:${height},width:${width},params:{}};<\/script><script src="https://www.highrevenueformat.com/${key}/invoke.js"><\/script>`);
+      doc.close();
+    }
+
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      loadAd('responsiveAd', '453915d3e61ac3c05e6b93cc3795af4e', 320, 50);
+    } else {
+      loadAd('responsiveAd', '7db7cb8991105453e1575d648e0bfa18', 728, 90);
+    }
+    loadAd('squareAd', '0916f790cc0c809775418c02e607e90c', 300, 250);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
