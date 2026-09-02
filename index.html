@@ -5,106 +5,306 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Mini Pokédex utilisant PokéAPI, prêt pour GitHub Pages." />
   <title>Mini Pokédex</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
   <div class="page-shell">
+
     <header class="hero">
       <div>
         <p class="eyebrow">Projet GitHub Pages + PokéAPI</p>
         <h1>Mini Pokédex</h1>
-        <p class="subtitle">Recherche un Pokémon, découvre ses types, ses statistiques et sa fiche détaillée.</p>
+        <p class="subtitle">
+          Recherche un Pokémon, découvre ses types, ses statistiques et sa fiche détaillée.
+        </p>
       </div>
+
       <div class="hero-badge" aria-hidden="true">⚡</div>
     </header>
 
+
     <main>
+
       <section class="controls" aria-label="Recherche Pokémon">
+
         <div class="search-box">
-          <input id="searchInput" type="search" placeholder="Ex. pikachu, 25, charizard…" autocomplete="off" />
-          <button id="searchButton" type="button">Rechercher</button>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Ex. pikachu, 25, charizard…"
+            autocomplete="off"
+          />
+
+          <button id="searchButton" type="button">
+            Rechercher
+          </button>
         </div>
-        <button id="randomButton" class="secondary-button" type="button">🎲 Pokémon au hasard</button>
+
+        <button
+          id="randomButton"
+          class="secondary-button"
+          type="button"
+        >
+          🎲 Pokémon au hasard
+        </button>
+
       </section>
 
-      <p id="status" class="status" aria-live="polite"></p>
 
-      <section class="ad-zone ad-zone-top" aria-label="Publicité">
+      <p
+        id="status"
+        class="status"
+        aria-live="polite"
+      ></p>
+
+
+      <!-- ================================================= -->
+      <!-- PUBLICITÉ 1 : 728x90 DESKTOP / 320x50 MOBILE -->
+      <!-- ================================================= -->
+
+      <section
+        class="ad-zone ad-zone-top"
+        aria-label="Publicité"
+      >
+
+        <!-- DESKTOP -->
         <div class="ad-desktop">
+
           <script>
             atOptions = {
-              'key': '7db7cb8991105453e1575d648e0bfa18',
-              'format': 'iframe',
-              'height': 90,
-              'width': 728,
-              'params': {}
+              'key' : '4a6d89dfad47da8d8e2f41afc88d2c80',
+              'format' : 'iframe',
+              'height' : 90,
+              'width' : 728,
+              'params' : {}
             };
           </script>
-          <script src="https://www.highrevenueformat.com/7db7cb8991105453e1575d648e0bfa18/invoke.js"></script>
+
+          <script src="https://www.highrevenueformat.com/4a6d89dfad47da8d8e2f41afc88d2c80/invoke.js"></script>
+
         </div>
 
+
+        <!-- MOBILE -->
         <div class="ad-mobile">
+
           <script>
             atOptions = {
-              'key': '453915d3e61ac3c05e6b93cc3795af4e',
-              'format': 'iframe',
-              'height': 50,
-              'width': 320,
-              'params': {}
+              'key' : 'a8b3cf1803438dc281c72aebc93db471',
+              'format' : 'iframe',
+              'height' : 50,
+              'width' : 320,
+              'params' : {}
             };
           </script>
-          <script src="https://www.highrevenueformat.com/453915d3e61ac3c05e6b93cc3795af4e/invoke.js"></script>
+
+          <script src="https://www.highrevenueformat.com/a8b3cf1803438dc281c72aebc93db471/invoke.js"></script>
+
         </div>
+
       </section>
+
+
+
+      <!-- ================================================= -->
+      <!-- POKÉMON -->
+      <!-- ================================================= -->
 
       <section>
+
         <div class="section-heading">
+
           <div>
             <p class="eyebrow">Sélection</p>
             <h2>Pokémon populaires</h2>
           </div>
-          <button id="loadMoreButton" class="ghost-button" type="button">Afficher plus</button>
+
+          <button
+            id="loadMoreButton"
+            class="ghost-button"
+            type="button"
+          >
+            Afficher plus
+          </button>
+
         </div>
-        <div id="pokemonGrid" class="pokemon-grid"></div>
+
+        <div
+          id="pokemonGrid"
+          class="pokemon-grid"
+        ></div>
+
       </section>
 
-      <section class="ad-zone ad-zone-square" aria-label="Publicité">
+
+
+      <!-- ================================================= -->
+      <!-- PUBLICITÉ 2 : 300x250 -->
+      <!-- ================================================= -->
+
+      <section
+        class="ad-zone ad-zone-square"
+        aria-label="Publicité"
+      >
+
         <script>
           atOptions = {
-            'key': '0916f790cc0c809775418c02e607e90c',
-            'format': 'iframe',
-            'height': 250,
-            'width': 300,
-            'params': {}
+            'key' : '53cb42995db5db1407a299e8fe67735a',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
           };
         </script>
-        <script src="https://www.highrevenueformat.com/0916f790cc0c809775418c02e607e90c/invoke.js"></script>
+
+        <script src="https://www.highrevenueformat.com/53cb42995db5db1407a299e8fe67735a/invoke.js"></script>
+
       </section>
+
+
+
+      <!-- ================================================= -->
+      <!-- PUBLICITÉ 3 : 300x250 -->
+      <!-- ================================================= -->
+
+      <section
+        class="ad-zone ad-zone-square"
+        aria-label="Publicité"
+      >
+
+        <script>
+          atOptions = {
+            'key' : '53cb42995db5db1407a299e8fe67735a',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+          };
+        </script>
+
+        <script src="https://www.highrevenueformat.com/53cb42995db5db1407a299e8fe67735a/invoke.js"></script>
+
+      </section>
+
+
+
+      <!-- ================================================= -->
+      <!-- PUBLICITÉ 4 : 728x90 DESKTOP / 320x50 MOBILE -->
+      <!-- ================================================= -->
+
+      <section
+        class="ad-zone ad-zone-bottom"
+        aria-label="Publicité"
+      >
+
+        <!-- DESKTOP -->
+        <div class="ad-desktop">
+
+          <script>
+            atOptions = {
+              'key' : '4a6d89dfad47da8d8e2f41afc88d2c80',
+              'format' : 'iframe',
+              'height' : 90,
+              'width' : 728,
+              'params' : {}
+            };
+          </script>
+
+          <script src="https://www.highrevenueformat.com/4a6d89dfad47da8d8e2f41afc88d2c80/invoke.js"></script>
+
+        </div>
+
+
+        <!-- MOBILE -->
+        <div class="ad-mobile">
+
+          <script>
+            atOptions = {
+              'key' : 'a8b3cf1803438dc281c72aebc93db471',
+              'format' : 'iframe',
+              'height' : 50,
+              'width' : 320,
+              'params' : {}
+            };
+          </script>
+
+          <script src="https://www.highrevenueformat.com/a8b3cf1803438dc281c72aebc93db471/invoke.js"></script>
+
+        </div>
+
+      </section>
+
     </main>
+
   </div>
 
-  <dialog id="pokemonDialog" class="pokemon-dialog">
-    <button id="closeDialogButton" class="close-button" type="button" aria-label="Fermer">×</button>
+
+
+  <!-- ================================================= -->
+  <!-- DIALOG POKÉMON -->
+  <!-- ================================================= -->
+
+  <dialog
+    id="pokemonDialog"
+    class="pokemon-dialog"
+  >
+
+    <button
+      id="closeDialogButton"
+      class="close-button"
+      type="button"
+      aria-label="Fermer"
+    >
+      ×
+    </button>
+
     <div id="pokemonDetails"></div>
+
   </dialog>
 
+
+
+  <!-- ================================================= -->
+  <!-- TEMPLATE CARTE -->
+  <!-- ================================================= -->
+
   <template id="pokemonCardTemplate">
+
     <article class="pokemon-card">
+
       <div class="card-topline">
         <span class="pokemon-number"></span>
         <span class="card-arrow">↗</span>
       </div>
-      <img class="pokemon-image" src="" alt="" loading="lazy" />
+
+      <img
+        class="pokemon-image"
+        src=""
+        alt=""
+        loading="lazy"
+      />
+
       <div class="card-content">
+
         <h3 class="pokemon-name"></h3>
+
         <div class="pokemon-types"></div>
+
       </div>
+
     </article>
+
   </template>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
